@@ -182,9 +182,11 @@ const SearchModal = () => {
       onSubmit={onSubmit}
       title="Filters"
       actionLabel={actionLabel}
-      secondaryActionLabel={secondaryActionLabel}
-      secondaryAction={step === STEPS.LOCATION ? undefined : onBack}
+      secondaryActionLabel={secondaryActionLabel as string}
+      secondaryAction={step === STEPS.LOCATION ? () => {} : onBack}
       body={bodyContent}
+      footer={<></>}
+      disabled={false}
     />
   );
 };
